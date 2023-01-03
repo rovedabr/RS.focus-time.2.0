@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --hue-primary: 240;
+  --hue-secundary: 194;
+  --hue-background: 0;
+  
+  --primary-color: hsla(var(--hue-primary), 6%, 21%, 1);
+  --secundary-color: hsla(var(--hue-secundary),100%,100%,1)
+  
+  --bg-color: hsla(var(--hue-background), 0%, 90%, 1);
+  --bg-buttons-off: hsla(var(--hue-primary), 9%, 89%, 1);
+  --bg-buttons-on:hsla(var(--hue-secundary), 97%, 31%, 1);
+
+  --fc-texting: hsla(var(--hue-primary), 6%, 21%, 1);
+}
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: clamp(6.3rem, 3rem + 18vw, 12.6rem);
+  
+  background-color: var(--bg-color);
+  display: flex;
+  
+}
+
+main {
+  justify-self: end;
+  align-self: center;
+  margin: 19.6rem auto;
+  gap: clamp(5rem, 1rem + 20vw, 19.2rem);
+  display: grid;
+  grid-template-areas: 
+    'counter sounds';
+}
+
+/* .on {
+  display: none;
+} */
+
+button {
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+}
+
+svg path {
+  fill: var(--primary-color);
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+button:hover svg path {
+  fill: var(--bg-buttons-on);
+
+}
+
+#timer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5.8rem;
+  align-items: center;
+}
+
+#controls {
+  display: flex;
+  gap: clamp(.1rem, 1rem + 5vw, 4rem);
+
+  width: clamp(.5rem, .1rem + .1vw, 4.8rem);
+}
+
+#sounds {
+  display: grid;
+  grid-template-areas: 
+    'forest rain'
+    'coffee-shop fireplace';
+  gap: 3.2rem;
+}
+
+#sounds button {
+  padding: 4.8rem 4.1rem;
+  background-color: var(--bg-buttons-off);
+  border-radius: 2.4rem;
+}
+
+/*on*/
+#sounds .on {
+  background-color: var(--bg-buttons-on);
+}
+
+#sounds .on svg path {
+  fill: #FFFFFF;
+}
